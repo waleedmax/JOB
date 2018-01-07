@@ -1,0 +1,51 @@
+.p1{
+	width: 50px;
+	height: 50px;
+}
+.waleed {
+  height: 50px;
+  width: 150px;
+   text-align: center;
+  background-color:#3bb3e0;
+  padding:0px;
+  position:relative;
+  font-family: 'Open Sans', sans-serif;
+  font-size:18px;
+  text-decoration:none;
+  color:red;
+  border: solid 5px #BBDEFB;
+
+  background-image: linear-gradient(bottom, rgb(44,160,102) 0%, rgb(62,184,229) 100%);
+  background-image: -o-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+  background-image: -moz-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+  background-image: -ms-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(0, rgb(55,160,202)),
+  color-stop(1, rgb(62,184,229))
+  );
+  
+  -moz-box-shadow: inset 0px 1px 0px #7fd2f1, 0px 1px 0px #fff;
+  box-shadow: inset 0px 1px 0px #7fd2f1, 0px 1px 0px #fff;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+}
+
+
+.Container1 {
+  height: 300px;
+  width: 1700px;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Flag_of_Afghanistan_%281880%E2%80%931901%29.svg/2000px-Flag_of_Afghanistan_%281880%E2%80%931901%29.svg.png")
+}
+
+
+
+
+
+
+

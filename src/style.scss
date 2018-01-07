@@ -1,0 +1,154 @@
+$duration: 2s;
+
+@mixin c1 {
+	-webkit-clip-path: polygon(100% 18%, 58% 0%, 1% 33%, 1% 77%, 33% 100%, 100% 90%, 100% 67%, 51% 80%, 31% 69%, 30% 44%, 54% 30%, 99% 37%);
+	clip-path: polygon(100% 18%, 58% 0%, 1% 33%, 1% 77%, 33% 100%, 100% 90%, 100% 67%, 51% 80%, 31% 69%, 30% 44%, 54% 30%, 99% 37%);	
+}
+
+@mixin c2 {
+	-webkit-clip-path: polygon(100% 12%, 41% 0, 9% 32%, 1% 74%, 34% 97%, 100% 95%, 98% 71%, 50% 77%, 30% 67%, 38% 44%, 59% 30%, 99% 37%);
+	clip-path: polygon(100% 12%, 41% 0, 9% 32%, 1% 74%, 34% 97%, 100% 95%, 98% 71%, 50% 77%, 30% 67%, 38% 44%, 59% 30%, 99% 37%);
+}
+
+
+@mixin l1 {
+	-webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 68%, 36% 69%, 35% 0);
+	clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 68%, 36% 69%, 35% 0);
+}
+
+@mixin l2 {
+	-webkit-clip-path: polygon(3% 0, 2% 95%, 100% 98%, 99% 69%, 31% 64%, 31% 0);
+	clip-path: polygon(3% 0, 2% 95%, 100% 98%, 99% 69%, 31% 64%, 31% 0);
+}
+
+
+@mixin i1 {
+	-webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 1%, 0% 0%, 0% 24%, 100% 23%, 100% 39%, 0% 36%);
+	clip-path: polygon(0% 100%, 100% 100%, 100% 1%, 0% 0%, 0% 24%, 100% 23%, 100% 39%, 0% 36%);
+}
+
+@mixin i2 {
+	-webkit-clip-path: polygon(4% 98%, 100% 100%, 100% 2%, 0 1%, 1% 24%, 100% 21%, 100% 37%, 4% 36%);
+	clip-path: polygon(4% 98%, 100% 100%, 100% 2%, 0 1%, 1% 24%, 100% 21%, 100% 37%, 4% 36%);
+}
+
+@mixin p1 {
+	-webkit-clip-path: polygon(0% 100%, 0% 0%, 72% 0%, 98% 9%, 100% 25%, 96% 40%, 84% 48%, 39% 48%, 41% 100%);
+	clip-path: polygon(0% 100%, 0% 0%, 72% 0%, 98% 9%, 100% 25%, 96% 40%, 84% 48%, 39% 48%, 41% 100%);
+}
+
+@mixin p2 {
+	-webkit-clip-path: polygon(1% 99%, 4% 0, 75% 0, 96% 8%, 100% 24%, 93% 40%, 74% 54%, 41% 55%, 43% 100%);
+	clip-path: polygon(1% 99%, 4% 0, 75% 0, 96% 8%, 100% 24%, 93% 40%, 74% 54%, 41% 55%, 43% 100%);
+}
+
+
+@mixin y1 {
+	-webkit-clip-path: polygon(0% 0%, 32% 44%, 38% 99%, 67% 100%, 64% 43%, 100% 0%, 64% 0%, 45% 24%, 27% 0%);
+	clip-path: polygon(0% 0%, 32% 44%, 38% 99%, 67% 100%, 64% 43%, 100% 0%, 64% 0%, 45% 24%, 27% 0%);
+}
+
+@mixin y2 {
+	-webkit-clip-path: polygon(0 1%, 30% 44%, 34% 100%, 60% 100%, 63% 45%, 100% 4%, 64% 3%, 47% 24%, 29% 1%);
+	clip-path: polygon(0 1%, 30% 44%, 34% 100%, 60% 100%, 63% 45%, 100% 4%, 64% 3%, 47% 24%, 29% 1%);
+}
+
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20vh;
+  background: 
+    radial-gradient(
+      white, 
+      gainsboro
+    );
+}
+div {
+  width: 18vmin;
+  height: 30vmin;
+  margin: 0 1vmin;
+  animation: $duration ease-in-out infinite;
+}
+
+.c {
+  animation-name: c; 
+  background: tomato;
+}
+@keyframes c {
+  from, to { @include c1; }
+  50% { @include c2; }
+}
+
+.l {
+  animation-name: l; 
+  background: mediumseagreen;
+}
+@keyframes l {
+  from, to { @include l1; }
+  50% { @include l2; }
+}
+
+.i {
+  width: 9vmin;
+  animation-name: i; 
+  background: orange;
+}
+@keyframes i {
+  from, to { @include i1; }
+  50% { @include i2; }
+}
+
+.p {
+  animation-name: p; 
+  background: orchid;
+  
+  &.p1 { 
+    animation-delay: -$duration/2;
+    background: dodgerblue;
+  }
+}
+@keyframes p {
+  from, to { @include p1; }
+  50% { @include p2; }
+}
+
+.y {
+  animation-name: y; 
+  background: darkturquoise;
+}
+@keyframes y {
+  from, to { @include y1; }
+  50% { @include y2; }
+}
+
+a, iframe {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+iframe {
+  pointer-events: none;
+  transform:
+    translate3d(0,50%,0)
+    scale3d(.5,.5,.5);
+  transition: .3s;
+  
+  body:hover & {
+    transform: none;
+    opacity: .3;
+  }
+}
+
+a {
+  cursor: pointer;
+  z-index: 1000;
+}
